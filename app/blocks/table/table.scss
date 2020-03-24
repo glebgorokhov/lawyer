@@ -1,0 +1,15 @@
+.table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 14px;
+  line-height: 1.5;
+
+  $b: &;
+
+  &__col {
+    padding: 20px 0;
+    vertical-align: top;
+    border-bottom: 1px solid #eaeaea;
+  }
+}

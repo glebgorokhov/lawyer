@@ -1,0 +1,19 @@
+mixin breadcrumbs(json)
+  +b.breadcrumbs&attributes(attributes)
+    each item in json
+      +e.item
+        +e(item[1] ? 'a' : 'p').link(href=item[1])!= item[0]
+
+mixin ui-kit-breadcrumbs
+  +ui-section
+    +ui-section-head
+      +ui-title Хлебные крошки
+      +ui-path
+        p Блок: blocks/breadcrumbs/breadcrumbs
+
+    +ui-section-content()
+      +breadcrumbs([['Главная', '#'], ['Раздел', '#'], ['Страница']])
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
