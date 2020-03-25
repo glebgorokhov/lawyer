@@ -1,0 +1,136 @@
+.header {
+  display: block;
+
+  @include rule(padding, (xl: 48px 0, md: 18px 0));
+  @include rule(margin-bottom, (xl: 30px, md: 0));
+
+  $b: &;
+
+  .container {
+    @include rule(display, (md: flex));
+    @include rule(align-items, (md: center));
+    @include rule(justify-content, (md: space-between));
+  }
+
+  &__logo {
+    font-size: 0;
+  }
+
+  &__burger {
+    @include rule(display, (md: block !important), min);
+
+    @include screen(md) {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: color(basic);
+      z-index: 500;
+      box-sizing: border-box;
+      padding: 26px 20px 20px;
+      transition: opacity $ease-main;
+      opacity: 0;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__burger-close {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    fill: white;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+  }
+
+  &__menu {
+    @include rule(display, (xl: flex, md: block));
+    @include rule(margin, (md: 0 -20px));
+
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    @include rule(border-top, (md: 1px solid color(grey-7)));
+
+    &:last-child {
+      @include rule(border-bottom, (md: 1px solid color(grey-7)));
+    }
+
+    &:not(:first-child) {
+      @include rule(margin-left, (xl: 104px, lg: 50px, md: 0));
+    }
+  }
+
+  &__link {
+    font-size: 15px;
+    line-height: 25px;
+    transition: color $ease-main;
+
+    @include rule(display, (md: block));
+    @include rule(padding, (md: 20px));
+    @include rule(color, (xl: color(basic), md: white));
+
+    @include screen(md) {
+      display: flex;
+      align-items: center;
+
+      span {
+        flex: 1;
+      }
+
+      svg {
+        width: 6px;
+        height: 4px;
+        fill: white;
+        margin-left: 20px;
+        transition: transform $ease-main;
+      }
+
+      &.is-active {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &:hover {
+      @include rule(color, (md: color(main)), min);
+    }
+  }
+
+  &__submenu {
+    @include rule(display, (md: none !important), min);
+
+    display: none;
+    padding: 26px 20px 36px;
+  }
+
+  &__sublink {
+    font-size: 13px;
+    line-height: 22px;
+    color: white;
+    display: block;
+
+    &:not(:first-child) {
+      margin-top: 36px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    display: block;
+    margin-top: 32px;
+  }
+
+  &__socials {
+    margin-top: 48px;
+  }
+}

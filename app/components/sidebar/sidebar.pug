@@ -1,0 +1,22 @@
+mixin sidebar()
+  +b.sidebar&attributes(attributes)
+    +e.logo
+      img(src="assets/images/logo.svg" alt="@@")
+
+    +socials.__socials
+
+mixin ui-kit-sidebar()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент sidebar
+      +ui-path
+        p Компонент: components/sidebar/sidebar
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +sidebar
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

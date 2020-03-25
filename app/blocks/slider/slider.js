@@ -8,35 +8,40 @@ export function slider() {
   $(document).find('.js-slider').each(function () {
     const
       block = $(this),
-      container = block.find('.swiper-container'),
-      arrowPrev = block.find('.slider__button_prev'),
-      arrowNext = block.find('.slider__button_next'),
-      paginationContainer = block.find('.slider__dots');
+      container = block.find('.swiper-container');
 
     const mySlider = new Swiper(container, {
-      loop: true,
+      loop: false,
       speed: 700,
-      autoplay: {
-        delay: 2000,
-      },
+      autoplay: false,
       slidesPerView: 1,
       spaceBetween: 0,
       centeredSlides: false,
       roundLengths: true,
       freeMode: false,
-      navigation: {
-        nextEl: arrowNext,
-        prevEl: arrowPrev,
-      },
-      pagination: {
-        el: paginationContainer,
-        clickable: true,
-        bulletClass: 'slider__dot',
-        bulletActiveClass: 'is-active',
-      },
       breakpoints: { // Mobile-first
+        0: {
+          pagination: {
+            el: block.find('.slider__dots'),
+            clickable: true,
+            bulletClass: 'slider__dot',
+            bulletActiveClass: 'is-active',
+          },
+        },
         1024: {
-          slidesPerView: 1,
+          pagination: {
+            el: block.find('.slider__tabs'),
+            clickable: true,
+            bulletClass: 'slider__tab',
+            bulletActiveClass: 'is-active',
+            renderBullet: function (index, className) {
+              return `
+                <span class="${className}">
+                  ${$(this.slides[index]).find('.maps__title').text()}
+                </span>
+              `;
+            }
+          },
         },
       },
     });

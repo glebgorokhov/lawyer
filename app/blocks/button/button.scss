@@ -1,30 +1,75 @@
 .button {
   display: inline-block;
-  padding: 0 16px;
+  padding: 0 27px;
   border: 0;
   vertical-align: top;
   box-sizing: border-box;
-  background-color: color(main);
-  transition: opacity $ease-main;
+  background-color: white;
+  transition: color $ease-main, fill $ease-main, border-color $ease-main;
   cursor: pointer;
-  font-size: 14px;
-  line-height: 40px;
-  height: 40px;
+  font-size: 0;
+  line-height: 1;
+  height: 58px;
   text-align: center;
-  color: white;
   appearance: none;
-  border-radius: 5px;
+  border-radius: 0;
+  color: color(basic);
+  fill: color(basic);
+  box-shadow: 0px 4px 60px rgba(black, 0.25);
+
+  &:hover {
+    color: color(main);
+    fill: color(main);
+  }
 
   $b: &;
 
-  &[disabled] {
-    opacity: .5;
-    cursor: not-allowed;
-    pointer-events: none;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+
+    > *:not(:first-child) {
+      margin-left: 23px;
+    }
   }
 
-  &:hover {
-    opacity: .5;
+  span {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  &_style {
+    &_bold {
+      @include rule(height, (xl: 60px, md: 48px));
+
+      box-shadow: none;
+      border: 5px solid color(basic);
+      background: transparent;
+      padding: 0 35px;
+
+      span {
+        font-weight: 700;
+
+        @include rule(font-size, (xl: 16px, md: 12px));
+      }
+
+      &:hover {
+        border-color: color(main);
+      }
+
+      &_light {
+        border-color: white;
+        color: white;
+      }
+    }
   }
 }
 

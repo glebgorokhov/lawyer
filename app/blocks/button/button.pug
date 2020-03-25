@@ -1,6 +1,7 @@
 mixin button(newTag)
   +b(newTag || 'a').button&attributes(attributes)
-    block
+    +e.wrapper
+      block
 
 mixin ui-kit-button()
   +ui-section
@@ -11,8 +12,12 @@ mixin ui-kit-button()
 
     +ui-section-content()
       +ui-elements-list()
-        +button Кнопка
-        +button()(disabled) Отключенная кнопка
+        +button()(href="#").__link
+          span К проекту
+          +icon('arrow')
+
+        +button()._style_bold.__button
+          span Сообщить о нарушении
 
     //- При +ui-section-content(true) контейнер отсутствует
     //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()

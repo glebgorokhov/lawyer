@@ -4,4 +4,14 @@ block head
   - var pageTitle = 'Главная страница'
 
 block content
-  p Страница: index
+  +layout
+    +e.fixed
+      +sidebar.__sidebar.hide-md
+      +news.__news.hide-md
+
+    +e.content
+      +header
+      +news.show-md
+      +maps
+      +footer
+

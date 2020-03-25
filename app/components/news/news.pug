@@ -1,0 +1,25 @@
+mixin news()
+  +b.news.js-scrollbar&attributes(attributes)
+    +e.wrapper
+      each item in getData('news')
+        +e.A.item(href="#", target="_blank", class=item.class)
+          if item.date
+            +e.P.date!= item.date
+          if item.title
+            +e.P.title!= item.title
+          if item.text
+            +e.P.text.js-news-text!= item.text
+
+mixin ui-kit-news()
+  +ui-section
+    +ui-section-head
+      +ui-title Новости
+      +ui-path
+        p Компонент: components/news/news
+
+    +ui-section-content()
+      +news
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

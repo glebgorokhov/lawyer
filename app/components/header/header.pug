@@ -1,0 +1,45 @@
+mixin header()
+  +b.header&attributes(attributes)
+    .container
+      +e.logo.show-md
+        img(src="assets/images/logo.svg" alt="@@")
+
+      +burger-button.__burger-button
+
+      +e.burger.js-burger-menu
+        +icon('close').__burger-close.show-md.js-burger-close
+
+        +e.menu
+          each item in getData('header').menu
+            +e.item
+              +e.link(href=item.link, alt="@@", class=(item.submenu ? 'is-accordion' : false))
+                span!= item.text
+
+                if item.submenu
+                  +icon('arrow_dropdown', true).show-md
+
+              if item.submenu
+                +e.submenu
+                  each link in item.submenu
+                    +e.sublink(href=link.link, alt="@@")!= link.text
+
+        +button()._style_bold._style_bold_light.__button.show-md
+          span Сообщить о нарушении
+
+        +socials._light.__socials.show-md
+
+mixin ui-kit-header()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент header
+      +ui-path
+        p Компонент: components/header/header
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +header
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

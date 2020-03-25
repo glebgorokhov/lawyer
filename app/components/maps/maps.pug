@@ -1,0 +1,29 @@
+mixin maps()
+  +b.maps&attributes(attributes)
+    .container
+      +slider
+        each item in getData('maps')
+          +e.slide.swiper-slide
+            +e.P.title.show-md!= item.title
+            +e.image
+              img(src=item.image, alt="@@")
+            +button()(href="#").__link.hide-md
+              span К проекту
+              +icon('arrow')
+
+      +button()._style_bold.__button
+        span Сообщить о нарушении
+
+mixin ui-kit-maps()
+  +ui-section
+    +ui-section-head
+      +ui-title Карты
+      +ui-path
+        p Компонент: components/maps/maps
+
+    +ui-section-content()
+      +maps
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

@@ -18,3 +18,8 @@
 800 — Extra Bold, Ultra Bold
 900 — Black, Heavy
 */
+
+@include font-face('Gilroy', normal, 400, 'GilroyRegular');
+@include font-face('Gilroy', normal, 500, 'GilroyMedium');
+@include font-face('Gilroy', normal, 700, 'GilroyBold');
+@include font-face('Gilroy', normal, 900, 'GilroyBlack');

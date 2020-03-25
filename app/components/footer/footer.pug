@@ -1,0 +1,20 @@
+mixin footer()
+  +b.footer&attributes(attributes)
+    .container
+      +e.P.copyright © 2019 - Институт права и публичной политики, Екатерина Горбунова
+
+mixin ui-kit-footer()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент footer
+      +ui-path
+        p Компонент: components/footer/footer
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +footer
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

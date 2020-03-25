@@ -27,8 +27,7 @@ block content
           p Переменные находятся в файле styles/helpers/_variables.scss
           p Шрифты подключены в styles/helpers/_fonts.scss
         +ui-description
-          p Основной шрифт: Arial ($font-main), font-weight: 400, 600
-          p Дополнительный шрифт: Times New Roman ($font-second), font-weight: 400, 600
+          p Основной шрифт: Gilroy ($font-main), font-weight: 400, 500, 700, 900
 
     //- Цвета
     +ui-section
@@ -45,80 +44,41 @@ block content
             +ui-color._color
             - n++
 
-    //- Градиенты
-    +ui-section
-      +ui-section-head
-        +ui-title Градиенты
-        +ui-path Массив градиентов в файле styles/helpers/_variables.scss
-        +ui-description
-          p Пример использования:
-          pre background: gradient(main);
-      +ui-section-content()
-        +ui-elements-list()
-          - var n = 0;
-          while n < 20
-            +ui-color._gradient
-            - n++
-
-    //- Таблицы
-    +ui-kit-table
-
-    //- Табы
-    +ui-kit-tabs
-
-    //- Попапы
-    +ui-kit-popups
-
     //- Скроллбар
     +ui-kit-scrollbar
 
     //- Слайдер
     +ui-kit-slider
 
-    //- Подсказки
-    +ui-kit-tooltip
-
-    //- Карты
-    +ui-kit-map
-
-    //- Анимации
-    +ui-section
-      +ui-section-head
-        +ui-title Анимации при скролле
-        +ui-path
-          p Блок: blocks/js-functions/scrollAnimation
-        +ui-description
-          p .js-sr — общий класс для анимируемых элементов
-          p Предустановленные модификаторы для появления с разных сторон:
-          p
-            a(href="https://scrollrevealjs.org/api/reveal.html" target="_blank") Документация
-          +ui-special
-            p .js-sr_top — появление сверху
-            p .js-sr_right — появление справа
-            p .js-sr_bottom — появление снизу
-            p .js-sr_left — появление слева
-
-      +ui-section-content()
-        +ui-elements-list()
-          +button().js-sr.js-sr_left .js-sr_left
-          +button().js-sr.js-sr_top .js-sr_top
-          +button().js-sr.js-sr_right .js-sr_right
-          +button().js-sr.js-sr_bottom .js-sr_bottom
-
-    //- Хлебные крошки
-    +ui-kit-breadcrumbs
-
-    //- Блок accordion
-    +ui-kit-accordion
-
     //- Блок button
     +ui-kit-button
 
-    //- Блок dropdown
-    +ui-kit-dropdown
+    //- Компонент layout
+    +ui-kit-layout
 
-    //- Блок form
-    +ui-kit-form
+    //- Компонент sidebar
+    +ui-kit-sidebar
 
-    //- Блок content-zone
-    +ui-kit-content-zone
+
+    //- Компонент news
+    +ui-kit-news
+
+
+    //- Компонент header
+    +ui-kit-header
+
+
+    //- Блок socials
+    +ui-kit-socials
+
+
+    //- Компонент maps
+    +ui-kit-maps
+
+
+    //- Компонент footer
+    +ui-kit-footer
+
+
+    //- Компонент burger-button
+    +ui-kit-burger-button

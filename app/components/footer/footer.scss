@@ -1,0 +1,15 @@
+.footer {
+  display: block;
+
+  @include rule(padding, (xl: 67px 0 30px, md: 71px 0 41px));
+
+  $b: &;
+
+  &__copyright {
+    @include rule(text-align, (xl: right, md: left));
+    @include rule(font-size, (xl: 12px, md: 10px));
+    @include rule(line-height, (xl: 2, md: 19px));
+
+    color: color(grey-4);
+  }
+}

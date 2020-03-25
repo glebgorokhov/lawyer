@@ -1,0 +1,27 @@
+.burger-button {
+  display: block;
+
+  @include rule(display, (xl: none, md: flex));
+
+  $b: &;
+
+  width: 30px;
+  height: 18px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform $ease-main;
+
+  &::before, &::after {
+    content: '';
+  }
+
+  span, &::before, &::after {
+    background: color(basic);
+    height: 2px;
+    width: 100%;
+    border-radius: 50px;
+    transition: transform $ease-main, opacity $ease-main, background $ease-main;
+    transform-origin: center;
+  }
+}

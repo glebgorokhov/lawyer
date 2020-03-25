@@ -1,15 +1,15 @@
 @import '../../node_modules/overlayscrollbars/css/OverlayScrollbars.min.css';
 
 .os-theme-dark > .os-scrollbar, .os-theme-light > .os-scrollbar {
-  padding: 5px;
+  padding: 0;
 }
 
 .os-theme-dark > .os-scrollbar-vertical, .os-theme-light > .os-scrollbar-vertical {
-  width: 15px;
+  width: 11px;
 }
 
 .os-theme-dark > .os-scrollbar.os-scrollbar-unusable, .os-theme-dark > .os-scrollbar > .os-scrollbar-track, .os-theme-light > .os-scrollbar.os-scrollbar-unusable, .os-theme-light > .os-scrollbar > .os-scrollbar-track {
-  background: rgba(black, .1);
+  background: color(grey-6);
 }
 
 .os-theme-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle, .os-theme-light.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
@@ -17,7 +17,7 @@
 }
 
 .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-  background: rgba(black, .5);
+  background: color(grey);
 }
 
 .os-theme-dark > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle,.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
@@ -25,5 +25,10 @@
 }
 
 .os-theme-dark > .os-scrollbar > .os-scrollbar-track, .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle, .os-theme-light > .os-scrollbar > .os-scrollbar-track, .os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-  border-radius: 1000px;
+  border-radius: 0;
+}
+
+.os-scrollbar-vertical {
+  right: auto;
+  left: 0;
 }

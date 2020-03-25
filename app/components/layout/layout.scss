@@ -1,0 +1,31 @@
+.layout {
+  display: block;
+
+  @include rule(padding-left, (xl: 702px, lg: 550px, md: 0));
+
+  $b: &;
+
+  &__wrapper {
+    padding-left: 11px;
+  }
+
+  &__fixed {
+    @include rule(width, (xl: 702px, lg: 550px, md: auto));
+    @include rule(position, (xl: fixed, md: static));
+    @include rule(display, (xl: flex, md: block));
+
+    transform: translate3d(0, 0, 0);
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &__sidebar {
+    width: 95px;
+    flex-shrink: 0;
+  }
+
+  &__news {
+    flex: 1;
+  }
+}
