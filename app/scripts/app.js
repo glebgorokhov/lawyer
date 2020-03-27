@@ -7,6 +7,7 @@ import {slider} from '../blocks/slider/slider';
 import {uiKitNavigation} from "../pages/ui-kit/ui-kit";
 import {header} from "../components/header/header";
 import {news} from "../components/news/news";
+import {resize} from "../blocks/js-functions/resize";
 
 const $ = window.$;
 
@@ -18,5 +19,6 @@ $(() => {
   uiKitNavigation();
   header();
   news();
+  resize();
 });
 /* eslint-enable */
